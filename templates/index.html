@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="styles/style.css") }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Github profile readme generator</h1>
+    </header>
+    
+    <div class="parent">
+        <div class="child">
+            <i class="fa fa-github fa-5x"></i>
+            <form action="" class="username-form" method="post">
+                <input type="text" name="username" id="" class="text-input" placeholder="Your github username">
+                <input type="submit" value="Next" class="submit-form">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
