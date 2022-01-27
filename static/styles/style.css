@@ -5,13 +5,6 @@
     padding: 0px;
 }
 
-/* @media screen and (max-width: 780px) {
-    header h1 {
-        font-size: 10vw;
-        padding: 1vh 1.5vw 1vh 1.5vw;
-    }
-} */
-
 header {
     border-bottom: 1px black solid;
     height: 10vh;
