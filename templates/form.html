@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
-    <link rel="stylesheet" href="../static/styles/form.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
     <title>Document</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
         <section class="main-section">
             <p class="file-title">Sriram-bb63.md/README.md</p>
             <br>
-            <form action="" class="main-form">
+            <form action="" class="main-form" method="post">
                 
                 <h2 class="form-section-name">Basic info</h2>
                 <div class="basic-info-section">
@@ -319,9 +319,9 @@
                 <h2 class="form-section-name">Cover photo</h2>
                 <div class="cover-photo-section">
                     <div class="input-box">
-                        <label for="name">Link of a photo of your choice</label>
+                        <label for="photo">Link of a photo of your choice</label>
                         <br>
-                        <input type="text" name="name" placeholder="https://i.imgur.com/k6UZpoc.jpeg">
+                        <input type="text" name="photo" placeholder="https://i.imgur.com/k6UZpoc.jpeg">
                     </div>
                 </div>
 
@@ -810,6 +810,8 @@
         </section>
 
     </section>
+
+    <br><br>
 
 </body>
 </html>
