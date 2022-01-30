@@ -5,6 +5,22 @@
     padding: 0px;
 }
 
+@media screen and (max-width: 780px) {
+    .parent, .child {
+        display: none;
+    }
+}
+
+.mobile {
+    display: none;
+}
+@media screen and (max-width: 780px) {
+    .mobile {
+        display: block;
+    }
+}
+
+
 header {
     border-bottom: 1px black solid;
     height: 10vh;
@@ -38,11 +54,11 @@ header h1 {
     align-items: center;
     flex-direction: column;
 }
-@media screen and (max-width: 780px) {
+/* @media screen and (max-width: 780px) {
     .child {
         width: 90%;
     }
-}
+} */
 
 .username-form {
     width: 100%;
@@ -58,12 +74,12 @@ header h1 {
     height: 100%;
     margin-bottom: 3%;
 }
-@media screen and (max-width: 780px) {
+/* @media screen and (max-width: 780px) {
     .username-form input {
         width: 90%;
         height: 30%;
     }
-}
+} */
 
 .username-form .text-input {
     padding: 1%;
@@ -75,8 +91,8 @@ header h1 {
     font-size: 1.3vw;
     font-family: "Noto sans", sans-serif;
 }
-@media screen and (max-width: 780px) {
+/* @media screen and (max-width: 780px) {
     .username-form .submit-form {
         font-size: 5vw;
     }
-}
+} */

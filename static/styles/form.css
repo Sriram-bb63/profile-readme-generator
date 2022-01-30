@@ -14,7 +14,6 @@ header {
     align-items: center;
 }
 
-
 header h1 {
     font-family: 'Noto sans', sans-serif;
     padding-left: 1%;
@@ -24,6 +23,18 @@ header h1 {
         font-size: 6vw;
     }
 } */
+
+.mobile {
+    display: none;
+}
+@media screen and (max-width: 780px) {
+    .main-body, .main-section {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+}
 
 .main-body {
     width: 100vw;
@@ -44,7 +55,7 @@ header h1 {
 
 .file-title {
     font-family: 'Inconsolata', monospace;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     padding: 1% 0% 0% 1%;
 }
 /* @media screen and (max-width: 780px) {
