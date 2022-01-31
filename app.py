@@ -1,5 +1,5 @@
-import code
 from flask import Flask, url_for, render_template, request, redirect
+import os
 
 app = Flask(__name__)
 
@@ -110,46 +110,47 @@ def form(username):
         project_4_link = request.form.get("project-4-link")
         project_5_name = request.form.get("project-5-name")
         project_5_link = request.form.get("project-5-link")
-        # print(f"""
-        # {name}
-        # {age}
-        # {university}
-        # {course}
-        # {work}
-        # {company}
-        # {nick_name}
-        # {country}
-        # {photo}
-        # {about}
-        # {linkedin}
-        # {instagram}
-        # {youtube}
-        # {twitter}
-        # {dribble}
-        # {google}
-        # {twitch}
-        # {quora}
-        # {codepen}
-        # {deviantart}
-        # {facebook}
-        # {medium}
-        # {slack}
-        # {project_1_name}
-        # {project_1_link}
-        # {project_2_name}
-        # {project_2_link}
-        # {project_3_name}
-        # {project_3_link}
-        # {project_4_name}
-        # {project_4_link}
-        # {project_5_name}
-        # {project_5_link}
-        # ----
-        # {python}
-        # {type(python)}
-        # """)
-        # print(type(about))
-        # print(about)
+        try:
+            os.mkdir(f"storage/{username}")
+        except:
+            pass
+        with open(f"storage/{username}/{username}.txt", "w") as f:
+            f.write(f"""
+                {name}
+                {age}
+                {university}
+                {course}
+                {work}
+                {company}
+                {nick_name}
+                {country}
+                {photo}
+                {about}
+                {linkedin}
+                {instagram}
+                {youtube}
+                {twitter}
+                {dribble}
+                {google}
+                {twitch}
+                {quora}
+                {codepen}
+                {deviantart}
+                {facebook}
+                {medium}
+                {slack}
+                {project_1_name}
+                {project_1_link}
+                {project_2_name}
+                {project_2_link}
+                {project_3_name}
+                {project_3_link}
+                {project_4_name}
+                {project_4_link}
+                {project_5_name}
+                {project_5_link}
+            """)
+        
     return render_template("form.html", username=username)
 
 if __name__ == "__main__":
