@@ -28,19 +28,16 @@ def form(username):
         # about
         about = request.form.get("about")
         # social media
-        linkedin = request.form.get("linkedin")
-        instagram = request.form.get("instagram")
-        youtube = request.form.get("youtube")
-        twitter = request.form.get("twitter")
+        codepen = request.form.get("codepen")
         dribble = request.form.get("dribble")
         google = request.form.get("google")
-        twitch = request.form.get("twitch")
-        quora = request.form.get("quora")
-        codepen = request.form.get("codepen")
-        deviantart = request.form.get("deviantart")
-        facebook = request.form.get("facebook")
+        instagram = request.form.get("instagram")
+        linkedin = request.form.get("linkedin")
         medium = request.form.get("medium")
+        portofolio = request.form.get("portofolio")
         slack = request.form.get("slack")
+        twitter = request.form.get("twitter")
+        youtube = request.form.get("youtube")
         # skills
         angularjs = request.form.get("angularjs")
         apache = request.form.get("apache")
@@ -108,7 +105,7 @@ def form(username):
         project_4_link = request.form.get("project-4-link")
         project_5_name = request.form.get("project-5-name")
         project_5_link = request.form.get("project-5-link")
-        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, linkedin, instagram, youtube, twitter, dribble, google, twitch, quora, codepen, deviantart, facebook, medium, slack, angularjs, apache, arduino, bash, bootstarp, c, canva, coffeescript, cplusplus, csharp, css, d3js, dart, django, docker, electron, figma, flask, flutter, gimp, git, go, googlecloud, graphql, haskell, heroku, html5, java, javascript, julia, jupyter, kotlin, linux, lua, markdown, mongodb, mysql, nextjs, nodejs, numpy, pandas, php, postgresql, python, raspberrypi, react, rust, sass, scikitlearn, swift, tailwind, tensorflow, typescript, unity, vuejs, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link)
+        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, codepen, dribble, google, instagram, linkedin, medium, portofolio, slack, twitter, youtube, angularjs, apache, arduino, bash, bootstarp, c, canva, coffeescript, cplusplus, csharp, css, d3js, dart, django, docker, electron, figma, flask, flutter, gimp, git, go, googlecloud, graphql, haskell, heroku, html5, java, javascript, julia, jupyter, kotlin, linux, lua, markdown, mongodb, mysql, nextjs, nodejs, numpy, pandas, php, postgresql, python, raspberrypi, react, rust, sass, scikitlearn, swift, tailwind, tensorflow, typescript, unity, vuejs, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link)
     return render_template("form.html", username=username)
 
 if __name__ == "__main__":
