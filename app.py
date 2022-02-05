@@ -38,6 +38,18 @@ def form(username):
         slack = request.form.get("slack")
         twitter = request.form.get("twitter")
         youtube = request.form.get("youtube")
+        socials = {
+            "codepen": codepen,
+            "dribble": dribble,
+            "google": google,
+            "instagram": instagram,
+            "linkedin": linkedin,
+            "medium": medium,
+            "portofolio": portofolio,
+            "slack": slack,
+            "twitter": twitter,
+            "youtube": youtube
+        }
         # skills
         angularjs = request.form.get("angularjs")
         apache = request.form.get("apache")
@@ -105,7 +117,7 @@ def form(username):
         project_4_link = request.form.get("project-4-link")
         project_5_name = request.form.get("project-5-name")
         project_5_link = request.form.get("project-5-link")
-        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, codepen, dribble, google, instagram, linkedin, medium, portofolio, slack, twitter, youtube, angularjs, apache, arduino, bash, bootstarp, c, canva, coffeescript, cplusplus, csharp, css, d3js, dart, django, docker, electron, figma, flask, flutter, gimp, git, go, googlecloud, graphql, haskell, heroku, html5, java, javascript, julia, jupyter, kotlin, linux, lua, markdown, mongodb, mysql, nextjs, nodejs, numpy, pandas, php, postgresql, python, raspberrypi, react, rust, sass, scikitlearn, swift, tailwind, tensorflow, typescript, unity, vuejs, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link)
+        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, angularjs, apache, arduino, bash, bootstarp, c, canva, coffeescript, cplusplus, csharp, css, d3js, dart, django, docker, electron, figma, flask, flutter, gimp, git, go, googlecloud, graphql, haskell, heroku, html5, java, javascript, julia, jupyter, kotlin, linux, lua, markdown, mongodb, mysql, nextjs, nodejs, numpy, pandas, php, postgresql, python, raspberrypi, react, rust, sass, scikitlearn, swift, tailwind, tensorflow, typescript, unity, vuejs, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link)
     return render_template("form.html", username=username)
 
 if __name__ == "__main__":
