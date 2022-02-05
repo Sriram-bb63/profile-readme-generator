@@ -2,7 +2,7 @@ import os
 import requests
 import json
 
-def write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, skills, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link):
+def write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, skills, projects):
     with open("icons.json", "r") as json_file:
         icons = json.load(json_file)
 
@@ -18,7 +18,7 @@ def write(username, name, age, university, course, work, company, nick_name, cou
     <img src="cover_photo.jpg" width=50%, title="cover photo", alt="cover photo">
 </div>
 
-I am {name}, """)
+I am {name},""")
 
     if len(nick_name) > 0:
         with open(f"storage/{username}/{username}.md", "a") as f:
@@ -52,7 +52,7 @@ I am {name}, """)
             f.write(f"""\n\nYou can know more about me here: <a href="{socials["portofolio"]}" target="_blank">{name}</a>""")
 
     with open(f"storage/{username}/{username}.md", "a") as f:
-        f.write(f"""\n\n## Socials\n\n<div align="center">\n""")
+        f.write(f"""\n\n\n## Socials\n\n<div align="center">\n""")
 
     with open(f"storage/{username}/{username}.md", "a") as f:
         for social_key in socials:
@@ -62,15 +62,27 @@ I am {name}, """)
         f.write("</div>")
 
     with open(f"storage/{username}/{username}.md", "a") as f:
-        f.write(f"""\n\n## Skills\n\n<div align="center">\n""")
+        f.write(f"""\n\n\n## Skills""")
+
+    with open(f"storage/{username}/{username}.md", "a") as f:
+        f.write(f"""\n\n<div align="center">\n""")
 
     with open(f"storage/{username}/{username}.md", "a") as f:
         for skill_key in skills:
             link = skills.get(skill_key)
             if str(type(link)) != "<class 'NoneType'>":
-                f.write(f"""<a href="{link}" target="_blank"><img src="{icons["skills"][skill_key]}"></a>\n""")
-            # f.write(skill_key + str(type(link)))
+                f.write(f"""<img src="{icons["skills"][skill_key]}">\n""")
         f.write("</div>")
+
+    with open(f"storage/{username}/{username}.md", "a") as f:
+        f.write(f"""\n\n\n## Projects\n\n""")
+
+    with open(f"storage/{username}/{username}.md", "a") as f:
+        for i in range(1, 6):
+            project_name = projects.get(f"project_{i}_name")
+            project_link = projects.get(f"project_{i}_link")
+            if len(project_name) > 0 and len(project_link) > 0:
+                f.write(f"""- {project_name}: <a href="{project_link}" target="_blank">{project_link}</a>\n""")
 
     if len(photo) > 0:
         cover_photo = requests.get(photo)
