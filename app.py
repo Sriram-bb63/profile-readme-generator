@@ -1,3 +1,4 @@
+from attr import has
 from flask import Flask, url_for, render_template, request, redirect
 import os
 import readme_generator
@@ -28,84 +29,76 @@ def form(username):
         # about
         about = request.form.get("about")
         # social media
-        codepen = request.form.get("codepen")
-        dribble = request.form.get("dribble")
-        google = request.form.get("google")
-        instagram = request.form.get("instagram")
-        linkedin = request.form.get("linkedin")
-        medium = request.form.get("medium")
-        portofolio = request.form.get("portofolio")
-        slack = request.form.get("slack")
-        twitter = request.form.get("twitter")
-        youtube = request.form.get("youtube")
         socials = {
-            "codepen": codepen,
-            "dribble": dribble,
-            "google": google,
-            "instagram": instagram,
-            "linkedin": linkedin,
-            "medium": medium,
-            "portofolio": portofolio,
-            "slack": slack,
-            "twitter": twitter,
-            "youtube": youtube
+            "codepen": request.form.get("codepen"),
+            "dribble": request.form.get("dribble"),
+            "google": request.form.get("google"),
+            "instagram": request.form.get("instagram"),
+            "linkedin": request.form.get("linkedin"),
+            "medium": request.form.get("medium"),
+            "portofolio": request.form.get("portofolio"),
+            "slack": request.form.get("slack"),
+            "twitter": request.form.get("twitter"),
+            "youtube": request.form.get("youtube")
         }
         # skills
-        angularjs = request.form.get("angularjs")
-        apache = request.form.get("apache")
-        arduino = request.form.get("arduino")
-        bash = request.form.get("bash")
-        bootstarp = request.form.get("bootstarp")
-        c = request.form.get("c")
-        canva = request.form.get("canva")
-        coffeescript = request.form.get("coffeescript")
-        cplusplus = request.form.get("cplusplus")
-        csharp = request.form.get("csharp")
-        css = request.form.get("css")
-        d3js = request.form.get("d3js")
-        dart = request.form.get("dart")
-        django = request.form.get("django")
-        docker = request.form.get("docker")
-        electron = request.form.get("electron")
-        figma = request.form.get("figma")
-        flask = request.form.get("flask")
-        flutter = request.form.get("flutter")
-        gimp = request.form.get("gimp")
-        git = request.form.get("git")
-        go = request.form.get("go")
-        googlecloud = request.form.get("googlecloud")
-        graphql = request.form.get("graphql")
-        haskell = request.form.get("haskell")
-        heroku = request.form.get("heroku")
-        html5 = request.form.get("html5")
-        java = request.form.get("java")
-        javascript = request.form.get("javascript")
-        julia = request.form.get("julia")
-        jupyter = request.form.get("jupyter")
-        kotlin = request.form.get("kotlin")
-        linux = request.form.get("linux")
-        lua = request.form.get("lua")
-        markdown = request.form.get("markdown")
-        mongodb = request.form.get("mongodb")
-        mysql = request.form.get("mysql")
-        nextjs = request.form.get("nextjs")
-        nodejs = request.form.get("nodejs")
-        numpy = request.form.get("numpy")
-        pandas = request.form.get("pandas")
-        php = request.form.get("php")
-        postgresql = request.form.get("postgresql")
-        python = request.form.get("python")
-        raspberrypi = request.form.get("raspberrypi")
-        react = request.form.get("react")
-        rust = request.form.get("rust")
-        sass = request.form.get("sass")
-        scikitlearn = request.form.get("scikitlearn")
-        swift = request.form.get("swift")
-        tailwind = request.form.get("tailwind")
-        tensorflow = request.form.get("tensorflow")
-        typescript = request.form.get("typescript")
-        unity = request.form.get("unity") 
-        vuejs = request.form.get("vuejs") 
+        skills = {
+            "angularjs": request.form.get("angularjs"),
+            "apache": request.form.get("apache"),
+            "arduino": request.form.get("arduino"),
+            "bash": request.form.get("bash"),
+            "bootstarp": request.form.get("bootstarp"),
+            "c": request.form.get("c"),
+            "canva": request.form.get("canva"),
+            "coffeescript": request.form.get("coffeescript"),
+            "cplusplus": request.form.get("cplusplus"),
+            "csharp": request.form.get("csharp"),
+            "css": request.form.get("css"),
+            "d3js": request.form.get("d3js"),
+            "dart": request.form.get("dart"),
+            "django": request.form.get("django"),
+            "docker": request.form.get("docker"),
+            "electron": request.form.get("electron"),
+            "figma": request.form.get("figma"),
+            "flask": request.form.get("flask"),
+            "flutter": request.form.get("flutter"),
+            "gimp": request.form.get("gimp"),
+            "git": request.form.get("git"),
+            "go": request.form.get("go"),
+            "googlecloud": request.form.get("googlecloud"),
+            "graphql": request.form.get("graphql"),
+            "haskell": request.form.get("haskell"),
+            "heroku": request.form.get("heroku"),
+            "html5": request.form.get("html5"),
+            "java": request.form.get("java"),
+            "javascript": request.form.get("javascript"),
+            "julia": request.form.get("julia"),
+            "jupyter": request.form.get("jupyter"),
+            "kotlin": request.form.get("kotlin"),
+            "linux": request.form.get("linux"),
+            "lua": request.form.get("lua"),
+            "markdown": request.form.get("markdown"),
+            "mongodb": request.form.get("mongodb"),
+            "mysql": request.form.get("mysql"),
+            "nextjs": request.form.get("nextjs"),
+            "nodejs": request.form.get("nodejs"),
+            "numpy": request.form.get("numpy"),
+            "pandas": request.form.get("pandas"),
+            "php": request.form.get("php"),
+            "postgresql": request.form.get("postgresql"),
+            "python": request.form.get("python"),
+            "raspberrypi": request.form.get("raspberrypi"),
+            "react": request.form.get("react"),
+            "rust": request.form.get("rust"),
+            "sass": request.form.get("sass"),
+            "scikitlearn": request.form.get("scikitlearn"),
+            "swift": request.form.get("swift"),
+            "tailwind": request.form.get("tailwind"),
+            "tensorflow": request.form.get("tensorflow"),
+            "typescript": request.form.get("typescript"),
+            "unity": request.form.get("unity"),
+            "vuejs": request.form.get("vuejs") 
+        }
         # projects
         project_1_name = request.form.get("project-1-name")
         project_1_link = request.form.get("project-1-link")
@@ -117,7 +110,7 @@ def form(username):
         project_4_link = request.form.get("project-4-link")
         project_5_name = request.form.get("project-5-name")
         project_5_link = request.form.get("project-5-link")
-        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, angularjs, apache, arduino, bash, bootstarp, c, canva, coffeescript, cplusplus, csharp, css, d3js, dart, django, docker, electron, figma, flask, flutter, gimp, git, go, googlecloud, graphql, haskell, heroku, html5, java, javascript, julia, jupyter, kotlin, linux, lua, markdown, mongodb, mysql, nextjs, nodejs, numpy, pandas, php, postgresql, python, raspberrypi, react, rust, sass, scikitlearn, swift, tailwind, tensorflow, typescript, unity, vuejs, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link)
+        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, skills, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link)
     return render_template("form.html", username=username)
 
 if __name__ == "__main__":
