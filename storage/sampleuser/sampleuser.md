@@ -4,13 +4,13 @@
     <img src="cover_photo.jpg" width=50%, title="cover phoyo", alt="cover photo">
 </div>
 
-I am *name*, a *age* year old *course* student from *university*, *country*. I am a *work* in *company*.
+I am *name* (AKA *nick_name*), a *age* year old *course* student from *university*, *country*. I am a *work* in *company*.
 
 *about*
 
 You can know more about me here: <a href="" target="_blank">*Name*</a>
 
-## Contact
+## Social
 <div align="center">
     <a href="" target="_blank">
         <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
