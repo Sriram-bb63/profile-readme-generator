@@ -100,17 +100,19 @@ def form(username):
             "vuejs": request.form.get("vuejs") 
         }
         # projects
-        project_1_name = request.form.get("project-1-name")
-        project_1_link = request.form.get("project-1-link")
-        project_2_name = request.form.get("project-2-name")
-        project_2_link = request.form.get("project-2-link")
-        project_3_name = request.form.get("project-3-name")
-        project_3_link = request.form.get("project-3-link")
-        project_4_name = request.form.get("project-4-name")
-        project_4_link = request.form.get("project-4-link")
-        project_5_name = request.form.get("project-5-name")
-        project_5_link = request.form.get("project-5-link")
-        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, skills, project_1_name, project_1_link, project_2_name, project_2_link, project_3_name, project_3_link, project_4_name, project_4_link, project_5_name, project_5_link)
+        projects = {
+            "project_1_name": request.form.get("project-1-name"),
+            "project_1_link": request.form.get("project-1-link"),
+            "project_2_name": request.form.get("project-2-name"),
+            "project_2_link": request.form.get("project-2-link"),
+            "project_3_name": request.form.get("project-3-name"),
+            "project_3_link": request.form.get("project-3-link"),
+            "project_4_name": request.form.get("project-4-name"),
+            "project_4_link": request.form.get("project-4-link"),
+            "project_5_name": request.form.get("project-5-name"),
+            "project_5_link": request.form.get("project-5-link")
+        }
+        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, skills, projects)
     return render_template("form.html", username=username)
 
 if __name__ == "__main__":
