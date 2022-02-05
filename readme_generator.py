@@ -2,7 +2,7 @@ import os
 import requests
 import json
 
-def write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, skills, projects):
+def write(username, name, age, university, course, work, company, nick_name, country, photo, socials, skills, projects):
     with open("icons.json", "r") as json_file:
         icons = json.load(json_file)
 
@@ -10,6 +10,10 @@ def write(username, name, age, university, course, work, company, nick_name, cou
         os.mkdir(f"storage/{username}")
     except:
         pass
+
+    cover_photo = requests.get(photo)
+    with open(f"storage/{username}/cover_photo.jpg", "wb") as f:
+        f.write(cover_photo.content)
 
     with open(f"storage/{username}/{username}.md", "w") as f:
         f.write(f"""# Hello there
@@ -32,7 +36,6 @@ I am {name},""")
             work = "an " + work
         else:
             work = "a " + work
-
     if len(work) > 0 and len(company) > 0:
         with open(f"storage/{username}/{username}.md", "a") as f:
             f.write(f" I am {work} at {company}.")
@@ -42,10 +45,6 @@ I am {name},""")
     elif len(work) == 0 and len(company) > 0:
         with open(f"storage/{username}/{username}.md", "a") as f:
             f.write(f" I currently work in {company}.")
-
-    if len(about) > 0:
-        with open(f"storage/{username}/{username}.md", "a") as f:
-            f.write(f"\n\n{about}")
 
     if len(socials["portofolio"]) > 0:
         with open(f"storage/{username}/{username}.md", "a") as f:
@@ -83,8 +82,3 @@ I am {name},""")
             project_link = projects.get(f"project_{i}_link")
             if len(project_name) > 0 and len(project_link) > 0:
                 f.write(f"""- {project_name}: <a href="{project_link}" target="_blank">{project_link}</a>\n""")
-
-    if len(photo) > 0:
-        cover_photo = requests.get(photo)
-        with open(f"storage/{username}/cover_photo.jpg", "wb") as f:
-            f.write(cover_photo.content)
