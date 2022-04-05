@@ -15,6 +15,9 @@
     display: none;
 }
 @media screen and (max-width: 780px) {
+    .parent .child{
+        display: none;
+    }
     .mobile {
         display: block;
     }
