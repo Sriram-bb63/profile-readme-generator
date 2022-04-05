@@ -115,7 +115,7 @@ def form(username):
 
 @app.route("/download/<username>")
 def download(username):
-    return render_template("download.html")
+    return render_template("download.html", username=username)
 
 if __name__ == "__main__":
     app.run(debug=True)
