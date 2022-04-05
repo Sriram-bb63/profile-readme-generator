@@ -52,7 +52,7 @@ header h1 {
 }
 
 section {
-    height: 90vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,4 +91,15 @@ section ul li {
 
 .mono {
     font-family: monospace;
+    font-size: 1.3vw;
+}
+
+footer {
+    height: 5vh;
+    /* border-top: 1px solid black; */
+}
+
+footer p {
+    font-family: "Noto Sans";
+    padding-left: 1%;
 }
