@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/download.css') }}">
+    <!-- <link rel="stylesheet" href="../static/styles/download.css"> -->
+    <title>Readme generator</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Github profile readme generator</h1>
+    </header>
+
+    <br><br><br>
+
+    <h1 class="mobile">This site does not support mobile view yet</h1>
+
+    <section id="section">
+        <p>sriram-bb63.md is ready to download</p>
+        <br>
+        <a href="path_to_file" download="proposed_file_name">
+            <button class="btn"><i class="fa fa-download"></i> Download</button>
+        </a>
+        <br>
+        <p id="howto">How to add this file to your github profile?</p>
+        <ul>
+            <li>Create a repository named as Srirambb63</li>
+            <li>Create a file inside the repository and name is as README.md</li>
+            <li>Paste the contents of the downloaded file into the README.md file</li>
+        </ul>
+    </section>
+
+</body>
+</html>

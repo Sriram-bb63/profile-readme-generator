@@ -1,4 +1,3 @@
-from attr import has
 from flask import Flask, url_for, render_template, request, redirect
 import os
 import readme_generator
@@ -26,13 +25,11 @@ def form(username):
         country = request.form.get("country")
         # cover photo
         photo = request.form.get("photo")
-        # about
-        about = request.form.get("about")
         # social media
         socials = {
             "codepen": request.form.get("codepen"),
             "dribble": request.form.get("dribble"),
-            "google": request.form.get("google"),
+            "google": "mailto:" + request.form.get("google"),
             "instagram": request.form.get("instagram"),
             "linkedin": request.form.get("linkedin"),
             "medium": request.form.get("medium"),
@@ -112,8 +109,13 @@ def form(username):
             "project_5_name": request.form.get("project-5-name"),
             "project_5_link": request.form.get("project-5-link")
         }
-        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, about, socials, skills, projects)
+        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, socials, skills, projects)
+        return redirect(url_for("download", username=username))
     return render_template("form.html", username=username)
+
+@app.route("/download/<username>")
+def download(username):
+    return render_template("download.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

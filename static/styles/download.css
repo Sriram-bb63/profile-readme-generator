@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@media screen and (max-width: 780px) {
+    .parent, .child {
+        display: none;
+    }
+}
+
+.mobile {
+    display: none;
+}
+@media screen and (max-width: 780px) {
+    .mobile {
+        display: block;
+    }
+}
+
+
+header {
+    border-bottom: 1px black solid;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+
+header h1 {
+    font-family: "Noto sans", sans-serif;
+    padding-left: 1%;
+}
+@media screen and (max-width: 780px) {
+    header h1 {
+        font-size: 6vw;
+    }
+}
+
+.mobile {
+    display: none;
+}
+@media screen and (max-width: 780px) {
+    #section {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+}
+
+section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section p {
+    font-family: "Noto Sans";
+}
+
+section a {
+    width: 25%;
+    border: 1px solid black;
+}
+
+section .btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: black;
+    width: 100%;
+    padding: 5%;
+    cursor: pointer;
+    font-size: 20px;
+}
+section .btn:hover {
+    background-color: rgb(187, 255, 0);
+}
+
+#howto {
+    font-family: "Noto Sans";
+    font-size: 2vw;
+}
+
+section ul li {
+    font-family: "Noto Sans";
+}
