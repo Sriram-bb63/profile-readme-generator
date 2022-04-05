@@ -20,17 +20,17 @@
     <h1 class="mobile">This site does not support mobile view yet</h1>
 
     <section id="section">
-        <p>{{ username }}.md is ready to download</p>
+        <p><span class="mono">{{ username }}.md</span> is ready to download</p>
         <br>
-        <a href="storage/README.md" download="README.md">
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-        </a>
+        <form action="" method="post">
+            <button type="submit"><i class="fa fa-download"></i> Download</button>
+        </form>
         <br>
         <p id="howto">How to add this file to your github profile?</p>
         <ul>
-            <li>Create a repository named as {{ username }}</li>
-            <li>Create a file inside the repository and name is as README.md</li>
-            <li>Paste the contents of the downloaded file into the README.md file</li>
+            <li>Create a repository named as <span class="mono">{{ username }}</span></li>
+            <li>Create a file inside the repository and name is as <span class="mono">README.md</span></li>
+            <li>Paste the contents of the downloaded file into the <span class="mono">README.md</span> file</li>
         </ul>
     </section>
 

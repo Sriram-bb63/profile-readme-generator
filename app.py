@@ -1,5 +1,7 @@
-from flask import Flask, url_for, render_template, request, redirect
+import os
+from flask import Flask, url_for, render_template, request, redirect, send_from_directory
 import readme_generator
+import shutil
 
 app = Flask(__name__)
 
@@ -109,11 +111,16 @@ def form(username):
             "project_5_link": request.form.get("project-5-link")
         }
         readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, socials, skills, projects)
+        
         return redirect(url_for("download", username=username))
     return render_template("form.html", username=username)
 
-@app.route("/download/<username>")
+@app.route("/download/<username>", methods=["GET", "POST"])
 def download(username):
+    if request.method == "POST":
+        # readme_generator.to_zip(f"static/storage/{username}", username)
+        print("\t\tBUTTON WORKING")
+        # shutil.rmtree(f"static/storage/{username}")
     return render_template("download.html", username=username)
 
 if __name__ == "__main__":
