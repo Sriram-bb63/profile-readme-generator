@@ -18,11 +18,6 @@ header h1 {
     font-family: 'Noto sans', sans-serif;
     padding-left: 1%;
 }
-/* @media screen and (max-width: 780px) {
-    header h1 {
-        font-size: 6vw;
-    }
-} */
 
 .mobile {
     display: none;
@@ -47,22 +42,12 @@ header h1 {
     width: 80vw;
     background-color: #f0f0f0;
 }
-/* @media screen and (max-width: 780px) {
-    .main-section {
-        width: 90vw;
-    }
-} */
 
 .file-title {
     font-family: 'Inconsolata', monospace;
     font-size: 1.5vw;
     padding: 1% 0% 0% 1%;
 }
-/* @media screen and (max-width: 780px) {
-    .file-title {
-        font-size: 5vw;
-    }
-} */
 
 .form-section-name {
     margin-top: 2%;
@@ -75,25 +60,20 @@ header h1 {
     flex-direction: row;
     flex-wrap: wrap;
 }
-/* @media screen and (max-width: 780px) {
-    .basic-info-section {
-        flex-direction: column;
-    }
-} */
 
 .input-box {
     padding-left: 2%;
     padding-bottom: 1%;
     width: 48%;;
 }
-/* @media screen and (max-width: 780px) {
-    .input-box {
-        width: 100%;
-    }
-} */
 
 label {
     font-family: 'Noto sans', sans-serif;
+}
+
+.required:after {
+    content:" *";
+    color: red;
 }
 
 .basic-info-section input, .basic-info-section select {
@@ -101,11 +81,6 @@ label {
     font-size: 1.5vw;
     padding: 1%;
 }
-/* @media screen and (max-width: 780px) {
-    .basic-info-section input, .basic-info-section select {
-        font-size: 5vw;
-    }
-} */
 
 .cover-photo-section .input-box {
     width: 98%;
@@ -126,11 +101,6 @@ label {
     font-size: 1.5vw;
     padding: 1%;
 }
-/* @media screen and (max-width: 780px) {
-    .bio-section input {
-        font-size: 5vw;
-    }
-} */
 
 .bio-section textarea {
     font-family: "Noto sans", sans-serif;

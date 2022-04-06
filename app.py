@@ -1,7 +1,5 @@
-import os
-from flask import Flask, url_for, render_template, request, redirect, send_from_directory
-import readme_generator
-import shutil
+from flask import Flask, url_for, render_template, request, redirect
+import file_handling
 
 app = Flask(__name__)
 
@@ -27,14 +25,15 @@ def form(username):
         # cover photo
         photo = request.form.get("photo")
         # social media
+        portofolio = request.form.get("portofolio")
         socials = {
             "codepen": request.form.get("codepen"),
             "dribble": request.form.get("dribble"),
-            "google": "mailto:" + request.form.get("google"),
+            "google": request.form.get("google"),
             "instagram": request.form.get("instagram"),
             "linkedin": request.form.get("linkedin"),
             "medium": request.form.get("medium"),
-            "portofolio": request.form.get("portofolio"),
+            # "portofolio": request.form.get("portofolio"),
             "slack": request.form.get("slack"),
             "twitter": request.form.get("twitter"),
             "youtube": request.form.get("youtube")
@@ -110,8 +109,7 @@ def form(username):
             "project_5_name": request.form.get("project-5-name"),
             "project_5_link": request.form.get("project-5-link")
         }
-        readme_generator.write(username, name, age, university, course, work, company, nick_name, country, photo, socials, skills, projects)
-        
+        file_handling.write(username, name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects)
         return redirect(url_for("download", username=username))
     return render_template("form.html", username=username)
 

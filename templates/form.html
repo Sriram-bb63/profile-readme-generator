@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
-    <!-- <link rel="stylesheet" href="/static/styles/form.css"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}"> -->
+    <link rel="stylesheet" href="/static/styles/form.css">
     <title>Document</title>
 </head>
 <body>
@@ -29,22 +29,22 @@
                 <h2 class="form-section-name">Basic information</h2>
                 <div class="basic-info-section">
                     <div class="input-box">
-                        <label for="name">Name</label>
+                        <label for="name" class="required">Name</label>
                         <br>
                         <input type="text" name="name" placeholder="Rainn Wilson" required>
                     </div>
                     <div class="input-box">
-                        <label for="age">Age</label>
+                        <label for="age" class="required">Age</label>
                         <br>
                         <input type="text" name="age" placeholder="23" required>
                     </div>
                     <div class="input-box">
-                        <label for="university">University</label>
+                        <label for="university" class="required">University</label>
                         <br>
                         <input type="text" name="university" placeholder="Georgia Institute of Technology" required>
                     </div>
                     <div class="input-box">
-                        <label for="course">Course</label>
+                        <label for="course" class="required">Course</label>
                         <br>
                         <input type="text" name="course" placeholder="Computer Science (BS)" required>
                     </div>
@@ -65,7 +65,7 @@
                     </div>
                     
                     <div class="input-box">
-                        <label for="country">Country</label>
+                        <label for="country" class="required">Country</label>
                         <br>
                         <select id="country" name="country" required>
                             <option value="None">None</option>
@@ -322,7 +322,7 @@
                 <h2 class="form-section-name">Cover photo</h2>
                 <div class="cover-photo-section">
                     <div class="input-box">
-                        <label for="photo">Link of a photo of your choice</label>
+                        <label for="photo" class="required">Link of a photo of your choice</label>
                         <br>
                         <input type="text" name="photo" placeholder="https://i.imgur.com/k6UZpoc.jpeg" required>
                     </div>
@@ -330,6 +330,10 @@
                 
                 <h2 class="form-section-name">Socials</h2>
                 <div class="social-section">
+                    <div class="input-box">
+                        <label for="portofolio"><i class="fa fa-user"></i></label>
+                        <input type="text" name="portofolio" placeholder="Portofolio">
+                    </div>
                     <div class="input-box">
                         <label for="codepen"><i class="fa fa-codepen"></i></label>
                         <input type="text" name="codepen" placeholder="CodePen">
@@ -354,10 +358,6 @@
                     <div class="input-box">
                         <label for="medium"><i class="fa fa-medium"></i></label>
                         <input type="text" name="medium" placeholder="Medium">
-                    </div>
-                    <div class="input-box">
-                        <label for="portofolio"><i class="fa fa-user"></i></label>
-                        <input type="text" name="portofolio" placeholder="Portofolio">
                     </div>
                     <div class="input-box">
                         <label for="slack"><i class="fa fa-slack"></i></label>
