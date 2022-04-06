@@ -75,6 +75,7 @@ section form button {
     border: none;
     padding: 5%;
     cursor: pointer;
+    border: 2px solid black;
 }
 section form button:hover {
     background-color: rgb(187, 255, 0);
