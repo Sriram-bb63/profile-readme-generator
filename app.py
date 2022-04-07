@@ -1,5 +1,6 @@
 from flask import Flask, url_for, render_template, request, redirect
 import file_handling
+import shutil
 
 app = Flask(__name__)
 
@@ -116,7 +117,7 @@ def form(username):
 @app.route("/download/<username>", methods=["GET", "POST"])
 def download(username):
     if request.method == "POST":
-        # readme_generator.to_zip(f"static/storage/{username}", username)
+        shutil.make_archive(f"static/storage/{username}", "zip", f"static/storage/to_zip")
         print("\t\tBUTTON WORKING")
         # shutil.rmtree(f"static/storage/{username}")
     return render_template("download.html", username=username)

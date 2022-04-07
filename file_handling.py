@@ -1,27 +1,26 @@
 import os
 import requests
 import json
-import shutil
 
 def write(username, name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects):
     with open("icons.json", "r") as json_file:
         icons = json.load(json_file)
 
     try:
-        os.mkdir(f"static/storage/{username}")
+        os.mkdir(f"static/storage/to_zip/{username}")
     except:
         pass
 
     try:
         cover_photo = requests.get(photo)
-        with open(f"static/storage/{username}/cover_photo.jpg", "wb") as f:
+        with open(f"static/storage/to_zip/{username}/cover_photo.jpg", "wb") as f:
             f.write(cover_photo.content)
             cover_photo_status = True
     except Exception as exception:
         cover_photo_status = False
         print(f"--\n\n{type(exception).__name__}\n\n--")
 
-    with open(f"static/storage/{username}/README.md", "w") as f:
+    with open(f"static/storage/to_zip/{username}/README.md", "w") as f:
         if cover_photo_status:
             f.write(f"""# Hello there
 
@@ -53,7 +52,7 @@ I am {name},""")
             f.write(f" I currently work in {company}.")
 
         if len(portofolio) > 0:
-            f.write(f"""\n\nYou can know more about me here: <a href="{socials["portofolio"]}" target="_blank">{name}</a>""")
+            f.write(f"""\n\nYou can know more about me here: <a href="{portofolio}" target="_blank">{name}</a>""")
 
         if len(set(list(socials.values()))) > 1:
             f.write(f"""\n\n\n## Socials\n\n<div align="center">\n""")
@@ -79,6 +78,3 @@ I am {name},""")
                 project_link = projects.get(f"project_{i}_link")
                 if len(project_name) > 0 and len(project_link) > 0:
                     f.write(f"""- {project_name}: <a href="{project_link}" target="_blank">{project_link}</a>\n""")
-
-def to_zip(dir_name, username):
-    shutil.make_archive(dir_name+f"/{username}", "zip", dir_name)
