@@ -43,7 +43,7 @@ header h1 {
     display: none;
 }
 @media screen and (max-width: 780px) {
-    #section {
+    #section, body footer {
         display: none;
     }
     .mobile {
@@ -96,11 +96,13 @@ section ul li {
 }
 
 footer {
-    height: 5vh;
-    /* border-top: 1px solid black; */
+    display: flex;
+    flex-direction: row-reverse;
 }
 
-footer p {
-    font-family: "Noto Sans";
-    padding-left: 1%;
+footer a, footer i {
+    margin-left: 0.5%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
