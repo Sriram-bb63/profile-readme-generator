@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.mobile {
+    display: none;
+}
+@media screen and (max-width: 780px) {
+    body section, body footer {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+}
+
+header {
+    border-bottom: 1px black solid;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-family: "Noto sans", sans-serif;
+    padding-left: 1%;
+}
+@media screen and (max-width: 780px) {
+    header h1 {
+        font-size: 6vw;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row-reverse;
+    border-top: 1px solid black;
+}
+
+footer a, footer i {
+    margin-left: 0.5%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+footer a {
+    color: blue;
+    text-decoration: underline;
+    font-family: monospace;
+}

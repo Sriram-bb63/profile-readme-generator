@@ -1,58 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-@media screen and (max-width: 780px) {
-    .parent, .child {
-        display: none;
-    }
-}
-
-.mobile {
-    display: none;
-}
-@media screen and (max-width: 780px) {
-    .mobile {
-        display: block;
-    }
-}
-
-
-header {
-    border-bottom: 1px black solid;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-}
-
-
-header h1 {
-    font-family: "Noto sans", sans-serif;
-    padding-left: 1%;
-}
-@media screen and (max-width: 780px) {
-    header h1 {
-        font-size: 6vw;
-    }
-}
-
-.mobile {
-    display: none;
-}
-@media screen and (max-width: 780px) {
-    #section, body footer {
-        display: none;
-    }
-    .mobile {
-        display: block;
-    }
-}
-
 section {
-    height: 80vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,16 +40,4 @@ section ul li {
 .mono {
     font-family: monospace;
     font-size: 1.3vw;
-}
-
-footer {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-footer a, footer i {
-    margin-left: 0.5%;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
 }

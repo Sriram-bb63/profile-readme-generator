@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    {% block style %} {% endblock %}
+    <title>Readme generator</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Github profile readme generator</h1>
+    </header>
+
+    <h1 class="mobile">This site does not support mobile view yet</h1>
+    
+    {% block content %} {% endblock %}
+
+    <footer>
+        <i class="fa fa-github fa-2x"></i>
+        <a href="https://github.com/Sriram-bb63/profile-readme-generator" target="_blank">Repository</a>
+    </footer>
+
+</body>
+</html>

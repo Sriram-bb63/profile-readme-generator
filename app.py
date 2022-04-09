@@ -14,6 +14,9 @@ def main():
 
 @app.route("/form/<username>", methods=["GET", "POST"])
 def form(username):
+    for file in os.listdir("static/storage"):
+        if file.endswith(".zip"):
+            os.remove(f"static/storage/{file}")
     if request.method == "POST":
         # basic info
         name = request.form.get("name")
@@ -124,7 +127,6 @@ def download(username):
         shutil.make_archive(f"static/storage/{username}", "zip", f"static/storage/to_zip")
         shutil.rmtree(f"static/storage/to_zip/{username}")
         return send_from_directory("static", path=f"storage/{username}.zip", as_attachment=True)
-
     return render_template("download.html", username=username)
 
 if __name__ == "__main__":
