@@ -7,18 +7,27 @@
 
 {% block content %}
 <section id="section">
-    <p><span class="mono">{{ username }}.md</span> is ready to download</p>
     <br>
-    <form action="" method="post">
-        <button type="submit"><i class="fa fa-download"></i> Download</button>
-    </form>
+    <div>
+        <pre>
+            <code id="toCopy">
+                {{ s }}
+            </code>
+        </pre>
+        <button type="button" onclick="CopyToClipboard()">Copy</button>
+    </div>
     <br>
-    <p id="howto">How to add this file to your github profile?</p>
-    <ul>
-        <li>Create a repository named as <span class="mono">{{ username }}</span>.</li>
-        <li>You will find a <span class="mono">README.md</span> and a <span class="mono">cover_photo.jpg</span> inside the download zip file.</li>
-        <li>Upload both of them to the repository you have created.</li>
-        <li>You only need the <span class="mono">{{ username }}.zip</span> to extract the files inside it.<br>Uploading the <span class="mono">{{ username }}.zip</span> file to the repository isn't necessary.</li>
-    </ul>
 </section>
+<script>
+    function CopyToClipboard()
+    {
+        var r = document.createRange();
+        r.selectNode(document.getElementById("toCopy"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        alert("Copied")
+    }
+</script>
 {% endblock %}

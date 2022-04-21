@@ -1,6 +1,5 @@
-from flask import Flask, send_from_directory, url_for, render_template, request, redirect
+from flask import Flask, url_for, render_template, request, redirect
 import file_handling
-import shutil
 import os
 
 app = Flask(__name__)
@@ -114,20 +113,9 @@ def form(username):
             "project_5_name": request.form.get("project-5-name"),
             "project_5_link": request.form.get("project-5-link")
         }
-        file_handling.write(username, name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects)
-        return redirect(url_for("download", username=username))
+        s = file_handling.write(name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects)
+        return render_template("download.html", s=s)
     return render_template("form.html", username=username)
-
-@app.route("/download/<username>", methods=["GET", "POST"])
-def download(username):
-    if request.method == "POST":
-        for file in os.listdir("static/storage"):
-            if file.endswith(".zip"):
-                os.remove(f"static/storage/{file}")
-        shutil.make_archive(f"static/storage/{username}", "zip", f"static/storage/to_zip")
-        shutil.rmtree(f"static/storage/to_zip/{username}")
-        return send_from_directory("static", path=f"storage/{username}.zip", as_attachment=True)
-    return render_template("download.html", username=username)
 
 if __name__ == "__main__":
     app.run(debug=True)
