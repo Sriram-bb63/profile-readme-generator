@@ -6,7 +6,8 @@ def write(name, age, university, course, work, company, nick_name, country, phot
 
     s = ""
 
-    s = s + f"# Hello there\n\n<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\nI am {name},"
+    s = s + f"""
+# Hello there\n\n<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\nI am {name},"""
 
     if len(nick_name) > 0:
         s = s + f" (AKA {nick_name}),"

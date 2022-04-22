@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/result.css') }}">
+<!-- <link rel="stylesheet" href="../static/styles/result.css"> -->
+{% endblock %}
+
+{% block content %}
+<br><br><br>
+<section id="section">
+    <br>
+    <div>
+        <pre>
+            <code id="toCopy">
+                {{ s }}
+            </code>
+        </pre>
+        <button type="button" onclick="CopyToClipboard()">Copy</button>
+    </div>
+    <!-- <div class="modal">
+        <button type="button" onclick="expandModal()"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+        <h2>How to add a README.md to your github profile</h2>
+        <ul>
+            <li>Create a repository in your github account and name it as <span class="mono">&ltusername&gt.</span></li>
+            <li>Create <span class="mono">README.md</span> inside that repository.</li>
+            <li>Paste the copied content into it and commit the changes.</li>
+        </ul>
+    </div> -->
+    <br>
+</section>
+<br><br><br>
+<script>
+    function CopyToClipboard()
+    {
+        var r = document.createRange();
+        r.selectNode(document.getElementById("toCopy"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        alert("Copied")
+    }
+</script>
+{% endblock %}

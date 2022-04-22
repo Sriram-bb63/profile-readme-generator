@@ -1,23 +1,12 @@
 from flask import Flask, url_for, render_template, request, redirect
 import file_handling
-import os
+# import os
 
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def main():
     if request.method == "POST":
-        username = request.form.get("username")
-        return redirect(url_for("form", username=username))
-    return render_template("index.html")
-
-@app.route("/form/<username>", methods=["GET", "POST"])
-def form(username):
-    for file in os.listdir("static/storage"):
-        if file.endswith(".zip"):
-            os.remove(f"static/storage/{file}")
-    if request.method == "POST":
-        # basic info
         name = request.form.get("name")
         age = request.form.get("age")
         university = request.form.get("university")
@@ -114,8 +103,9 @@ def form(username):
             "project_5_link": request.form.get("project-5-link")
         }
         s = file_handling.write(name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects)
-        return render_template("download.html", s=s)
-    return render_template("form.html", username=username)
+        return render_template("result.html", s=s)
+    return render_template("form.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
