@@ -4,10 +4,16 @@ def write(name, age, university, course, work, company, nick_name, country, phot
     with open("icons.json", "r") as json_file:
         icons = json.load(json_file)
 
-    s = ""
+    s = """
+# Hello there\n\n"""
 
-    s = s + f"""
-# Hello there\n\n<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\nI am {name},"""
+#     s = s + f"""
+# # Hello there\n\n<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\nI am {name},"""
+
+    if len(photo) > 0:
+        s = s + "<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\n"
+
+    s = s + f"I am {name},"
 
     if len(nick_name) > 0:
         s = s + f" (AKA {nick_name}),"
@@ -53,6 +59,8 @@ def write(name, age, university, course, work, company, nick_name, country, phot
             project_link = projects.get(f"project_{i}_link")
             if len(project_name) > 0 and len(project_link) > 0:
                 s = s + f"- {project_name}: <a href='{project_link}' target='_blank'>{project_link}</a>\n"
+
+    s = s + "\n\n   > This README.md was generated using <a href='https://profile-readme-generator.herokuapp.com/' target='_blank'>https://profile-readme-generator.herokuapp.com/</a>"
 
     with open("asdf.md", "w") as f:
         f.write(s)

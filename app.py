@@ -1,3 +1,4 @@
+from django.db import reset_queries
 from flask import Flask, url_for, render_template, request, redirect
 import file_handling
 # import os
@@ -21,13 +22,16 @@ def main():
         portofolio = request.form.get("portofolio")
         socials = {
             "codepen": request.form.get("codepen"),
+            "deviantart": request.form.get("deviantart"),
             "dribble": request.form.get("dribble"),
+            "discord": request.form.get("discord"),
             "google": request.form.get("google"),
+            "hackerrank": request.form.get("hackerrank"),
             "instagram": request.form.get("instagram"),
+            "kaggle": request.form.get("kaggle"),
             "linkedin": request.form.get("linkedin"),
             "medium": request.form.get("medium"),
-            # "portofolio": request.form.get("portofolio"),
-            "slack": request.form.get("slack"),
+            "twitch": request.form.get("twitch"),
             "twitter": request.form.get("twitter"),
             "youtube": request.form.get("youtube")
         }
@@ -104,7 +108,7 @@ def main():
         }
         s = file_handling.write(name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects)
         return render_template("result.html", s=s)
-    return render_template("form.html")
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
