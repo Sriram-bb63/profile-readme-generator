@@ -1,16 +1,723 @@
 {% extends "base.html" %}
 
 {% block style %}
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-<!-- <link rel="stylesheet" href="../static/styles/style.css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+<!-- <link rel="stylesheet" href="../static/styles/index.css"> -->
 {% endblock %}
 
 {% block content %}
-<section>
-    <form action="" method="post">
-        <i class="fa fa-github fa-5x"></i>
-        <input type="text" name="username" id="" placeholder="Your github username">
-        <input type="submit" value="Next">
-    </form>
+<br><br><br>
+<section class="main-body">
+    <section class="main-section">
+        <p class="file-title">README.md</p>
+        <br>
+        <form action="" class="main-form" method="post">
+            
+            <h2 class="form-section-name">Basic information</h2>
+            <div class="basic-info-section">
+                <div class="input-box">
+                    <label for="name" class="required">Name</label>
+                    <br>
+                    <input type="text" name="name" placeholder="Andy Jack" required>
+                </div>
+                <div class="input-box">
+                    <label for="age" class="required">Age</label>
+                    <br>
+                    <input type="text" name="age" placeholder="23" required>
+                </div>
+                <div class="input-box">
+                    <label for="university" class="required">University</label>
+                    <br>
+                    <input type="text" name="university" placeholder="Georgia Institute of Technology" required>
+                </div>
+                <div class="input-box">
+                    <label for="course" class="required">Course</label>
+                    <br>
+                    <input type="text" name="course" placeholder="Computer Science (BS)" required>
+                </div>
+                <div class="input-box">
+                    <label for="work">Work</label>
+                    <br>
+                    <input type="text" name="work" placeholder="Data analyst">
+                </div>
+                <div class="input-box">
+                    <label for="company">Company</label>
+                    <br>
+                    <input type="text" name="company" placeholder="Vincent technologies">
+                </div>
+                <div class="input-box">
+                    <label for="nick-name">Nick-name</label>
+                    <br>
+                    <input type="text" name="nick-name" placeholder="Jax">
+                </div>
+                
+                <div class="input-box">
+                    <label for="country" class="required">Country</label>
+                    <br>
+                    <select id="country" name="country" required>
+                        <option value="None">None</option>
+                        <option value="Afganistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="American Samoa">American Samoa</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Anguilla">Anguilla</option>
+                        <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Aruba">Aruba</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bermuda">Bermuda</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bonaire">Bonaire</option>
+                        <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                        <option value="Brunei">Brunei</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Canary Islands">Canary Islands</option>
+                        <option value="Cape Verde">Cape Verde</option>
+                        <option value="Cayman Islands">Cayman Islands</option>
+                        <option value="Central African Republic">Central African Republic</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Channel Islands">Channel Islands</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Christmas Island">Christmas Island</option>
+                        <option value="Cocos Island">Cocos Island</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Comoros">Comoros</option>
+                        <option value="Congo">Congo</option>
+                        <option value="Cook Islands">Cook Islands</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Cote DIvoire">Cote DIvoire</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Curaco">Curacao</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominica">Dominica</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="East Timor">East Timor</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Eritrea">Eritrea</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Falkland Islands">Falkland Islands</option>
+                        <option value="Faroe Islands">Faroe Islands</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="French Guiana">French Guiana</option>
+                        <option value="French Polynesia">French Polynesia</option>
+                        <option value="French Southern Ter">French Southern Ter</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Gibraltar">Gibraltar</option>
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Greenland">Greenland</option>
+                        <option value="Grenada">Grenada</option>
+                        <option value="Guadeloupe">Guadeloupe</option>
+                        <option value="Guam">Guam</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Guinea">Guinea</option>
+                        <option value="Guyana">Guyana</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="India">India</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Isle of Man">Isle of Man</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kiribati">Kiribati</option>
+                        <option value="Korea North">Korea North</option>
+                        <option value="Korea Sout">Korea South</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                        <option value="Laos">Laos</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Lesotho">Lesotho</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Macau">Macau</option>
+                        <option value="Macedonia">Macedonia</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Marshall Islands">Marshall Islands</option>
+                        <option value="Martinique">Martinique</option>
+                        <option value="Mauritania">Mauritania</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mayotte">Mayotte</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Midway Islands">Midway Islands</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Nambia">Nambia</option>
+                        <option value="Nauru">Nauru</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherland Antilles">Netherland Antilles</option>
+                        <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                        <option value="Nevis">Nevis</option>
+                        <option value="New Caledonia">New Caledonia</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Niue">Niue</option>
+                        <option value="Norfolk Island">Norfolk Island</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Palau Island">Palau Island</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Papua New Guinea">Papua New Guinea</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Phillipines">Philippines</option>
+                        <option value="Pitcairn Island">Pitcairn Island</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Republic of Montenegro">Republic of Montenegro</option>
+                        <option value="Republic of Serbia">Republic of Serbia</option>
+                        <option value="Reunion">Reunion</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="St Barthelemy">St Barthelemy</option>
+                        <option value="St Eustatius">St Eustatius</option>
+                        <option value="St Helena">St Helena</option>
+                        <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                        <option value="St Lucia">St Lucia</option>
+                        <option value="St Maarten">St Maarten</option>
+                        <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                        <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                        <option value="Saipan">Saipan</option>
+                        <option value="Samoa">Samoa</option>
+                        <option value="Samoa American">Samoa American</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Seychelles">Seychelles</option>
+                        <option value="Sierra Leone">Sierra Leone</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Solomon Islands">Solomon Islands</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Suriname">Suriname</option>
+                        <option value="Swaziland">Swaziland</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Tahiti">Tahiti</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Togo">Togo</option>
+                        <option value="Tokelau">Tokelau</option>
+                        <option value="Tonga">Tonga</option>
+                        <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Turkmenistan">Turkmenistan</option>
+                        <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                        <option value="Tuvalu">Tuvalu</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United Arab Erimates">United Arab Emirates</option>
+                        <option value="United States of America">United States of America</option>
+                        <option value="Uraguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Vanuatu">Vanuatu</option>
+                        <option value="Vatican City State">Vatican City State</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                        <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                        <option value="Wake Island">Wake Island</option>
+                        <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zaire">Zaire</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                </div>
+            </div>
+            
+            <h2 class="form-section-name">Cover photo</h2>
+            <div class="cover-photo-section">
+                <div class="input-box">
+                    <label for="photo">Link of a photo of your choice</label>
+                    <br>
+                    <input type="text" name="photo" placeholder="https://i.imgur.com/k6UZpoc.jpeg">
+                </div>
+            </div>
+            
+            <h2 class="form-section-name">Socials</h2>
+            <div class="social-section">
+                <div class="input-box">
+                    <label for="portofolio"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" name="portofolio" placeholder="Portofolio">
+                </div>
+                <div class="input-box">
+                    <label for="codepen"><i class="fa-brands fa-codepen"></i></label>
+                    <input type="text" name="codepen" placeholder="CodePen">
+                </div>
+                <div class="input-box">
+                    <label for="deviantart"><i class="fa-brands fa-deviantart"></i></label>
+                    <input type="text" name="deviantart" placeholder="DeviantArt">
+                </div>
+                <div class="input-box">
+                    <label for="dribble"><i class="fa-brands fa-dribbble"></i></label>
+                    <input type="text" name="dribble" placeholder="Dribble">
+                </div>
+                <div class="input-box">
+                    <label for="discord"><i class="fa-brands fa-discord"></i></label>
+                    <input type="text" name="discord" placeholder="Discord">
+                </div>
+                <div class="input-box">
+                    <label for="google"><i class="fa-brands fa-google"></i></label>
+                    <input type="text" name="google" placeholder="Mail">
+                </div>
+                <div class="input-box">
+                    <label for="hackerrank"><i class="fa-brands fa-hackerrank"></i></label>
+                    <input type="text" name="hackerrank" placeholder="Hackerrank">
+                </div>
+                <div class="input-box">
+                    <label for="instagram"><i class="fa-brands fa-instagram"></i></label>
+                    <input type="text" name="instagram" placeholder="Instagram">
+                </div>
+                <div class="input-box">
+                    <label for="kaggle"><i class="fa-brands fa-kaggle"></i></label>
+                    <input type="text" name="kaggle" placeholder="Kaggle">
+                </div>
+                <div class="input-box">
+                    <label for="linkedin"><i class="fa-brands fa-linkedin-in"></i></label>
+                    <input type="text" name="linkedin" placeholder="LinkedIn">
+                </div>
+                <div class="input-box">
+                    <label for="medium"><i class="fa-brands fa-medium"></i></label>
+                    <input type="text" name="medium" placeholder="Medium">
+                </div>
+                <div class="input-box">
+                    <label for="twitch"><i class="fa-brands fa-twitch"></i></label>
+                    <input type="text" name="twitch" placeholder="Twitch">
+                </div>
+                <div class="input-box">
+                    <label for="twitter"><i class="fa-brands fa-twitter"></i></label>
+                    <input type="text" name="twitter" placeholder="Twitter">
+                </div>
+                <div class="input-box">
+                    <label for="youtube"><i class="fa-brands fa-youtube"></i></label>
+                    <input type="text" name="youtube" placeholder="YouTube">
+                </div>
+            </div>
+            
+            <h2 class="form-section-name">Skills</h2>
+            <div class="skill-section">
+                <div class="input-box">
+                    <input type="checkbox" name="angularjs" value="angularjs">
+                    <br>
+                    <label for="angularjs"><img src="https://img.shields.io/badge/AngularJS-E23237?style=for-the-badge&logo=angularjs&logoColor=white" alt="AngularJS"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="apache" value="apache">
+                    <br>
+                    <label for="apache"><img src="https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=Apache&logoColor=white" alt="Apche"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="arduino" value="arduino">
+                    <br>
+                    <label for="arduino"><img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="bash" value="bash">
+                    <br>
+                    <label for="bash"><img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="bootstarp" value="bootstarp">
+                    <br>
+                    <label for="bootstarp"><img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="c" value="c">
+                    <br>
+                    <label for="c"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="canva" value="canva">
+                    <br>
+                    <label for="canva"><img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white" alt="Canva"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="coffeescript" value="coffeescript">
+                    <br>
+                    <label for="coffeescript"><img src="https://img.shields.io/badge/CoffeeScript-2F2625?style=for-the-badge&logo=CoffeeScript&logoColor=white" alt="CoffeeScript"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="cplusplus" value="cplusplus">
+                    <br>
+                    <label for="cplusplus"><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="csharp" value="csharp">
+                    <br>
+                    <label for="csharp"><img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="css" value="css">
+                    <br>
+                    <label for="css"><img src="	https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="d3js" value="d3js">
+                    <br>
+                    <label for="d3js"><img src="https://img.shields.io/badge/d3.js-F9A03C?style=for-the-badge&logo=d3.js&logoColor=white" alt="D3.js"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="dart" value="dart">
+                    <br>
+                    <label for="dart"><img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="django" value="django">
+                    <br>
+                    <label for="django"><img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" alt="Django"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="docker" value="docker">
+                    <br>
+                    <label for="docker"><img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="electron" value="electron">
+                    <br>
+                    <label for="electron"><img src="https://img.shields.io/badge/Electron-2B2E3A?style=for-the-badge&logo=electron&logoColor=9FEAF9" alt="Electron"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="figma" value="figma">
+                    <br>
+                    <label for="figma"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="flask" value="flask">
+                    <br>
+                    <label for="flask"><img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="flutter" value="flutter">
+                    <br>
+                    <label for="flutter"><img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="gimp" value="gimp">
+                    <br>
+                    <label for="gimp"><img src="https://img.shields.io/badge/gimp-5C5543?style=for-the-badge&logo=gimp&logoColor=white" alt="Git"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="git" value="git">
+                    <br>
+                    <label for="git"><img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="GIMP"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="go" value="go">
+                    <br>
+                    <label for="go"><img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="googlecloud" value="googlecloud">
+                    <br>
+                    <label for="googlecloud"><img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google cloud"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="graphql" value="graphql">
+                    <br>
+                    <label for="graphql"><img src="https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="haskell" value="haskell">
+                    <br>
+                    <label for="haskell"><img src="https://img.shields.io/badge/Haskell-5D4F85?style=for-the-badge&logo=haskell&logoColor=white" alt="Haskell"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="heroku" value="heroku">
+                    <br>
+                    <label for="heroku"><img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="Heroku"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="html5" value="html5">
+                    <br>
+                    <label for="html5"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="java" value="java">
+                    <br>
+                    <label for="java"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="javascript" value="javascript">
+                    <br>
+                    <label for="javascript"><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="julia" value="julia">
+                    <br>
+                    <label for="julia"><img src="https://img.shields.io/badge/Julia-9558B2?style=for-the-badge&logo=julia&logoColor=white" alt="Julia"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="jupyter" value="jupyter">
+                    <br>
+                    <label for="jupyter"><img src="https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white" alt="Jupyter"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="kotlin" value="kotlin">
+                    <br>
+                    <label for="kotlin"><img src="https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="linux" value="linux">
+                    <br>
+                    <label for="linux"><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="lua" value="lua">
+                    <br>
+                    <label for="lua"><img src="	https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" alt="Lua"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="markdown" value="markdown">
+                    <br>
+                    <label for="markdown"><img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="mongodb" value="mongodb">
+                    <br>
+                    <label for="mongodb"><img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="mysql" value="mysql">
+                    <br>
+                    <label for="mysql"><img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="nextjs" value="nextjs">
+                    <br>
+                    <label for="nextjs"><img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="nodejs" value="nodejs">
+                    <br>
+                    <label for="nodejs"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="numpy" value="numpy">
+                    <br>
+                    <label for="numpy"><img src="https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white" alt="Numpy"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="pandas" value="pandas">
+                    <br>
+                    <label for="pandas"><img src="https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="php" value="php">
+                    <br>
+                    <label for="php"><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="postgresql" value="postgresql">
+                    <br>
+                    <label for="postgresql"><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="python" value="python">
+                    <br>
+                    <label for="python"><img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" alt="Python"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="raspberrypi" value="raspberrypi">
+                    <br>
+                    <label for="raspberrypi"><img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=Raspberry%20Pi&logoColor=white" alt="Raspberry Pi"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="react" value="react">
+                    <br>
+                    <label for="react"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="rust" value="rust">
+                    <br>
+                    <label for="rust"><img src="https://img.shields.io/badge/Rust-black?style=for-the-badge&logo=rust&logoColor=#E57324" alt="Rust"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="sass" value="sass">
+                    <br>
+                    <label for="sass"><img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="SASS"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="scikitlearn" value="scikitlearn">
+                    <br>
+                    <label for="scikitlearn"><img src="https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="swift" value="swift">
+                    <br>
+                    <label for="swift"><img src="https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white" alt="Swift"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="tailwind" value="tailwind">
+                    <br>
+                    <label for="tailwind"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="tensorflow" value="tensorflow">
+                    <br>
+                    <label for="tensorflow"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=white" alt="TensorFlow"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="typescript" value="typescript">
+                    <br>
+                    <label for="typescript"><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="unity" value="unity">
+                    <br>
+                    <label for="unity"><img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white"" alt="Unity"></label>
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" name="vuejs" value="vuejs">
+                    <br>
+                    <label for="vuejs"><img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D" alt="Vue.js"></label>
+                </div>
+            </div>
+
+            <h2 class="form-section-name">Projects</h2>
+            <div class="project-section">
+                <div class="input-box">
+                    <label for="project-1-name">Project name</label>
+                    <br>
+                    <input type="text" name="project-1-name" placeholder="Temperature, CPU and RAM log">
+                </div>
+                <div class="input-box">
+                    <label for="project-1-link">Link</label>
+                    <br>
+                    <input type="text" name="project-1-link" placeholder="https://github.com/Sriram-bb63/Temperature-log">
+                </div>
+                <div class="input-box">
+                    <label for="project-2-name">Project name</label>
+                    <br>
+                    <input type="text" name="project-2-name">
+                </div>
+                <div class="input-box">
+                    <label for="project-2-link">Link</label>
+                    <br>
+                    <input type="text" name="project-2-link">
+                </div>
+                <div class="input-box">
+                    <label for="project-3-name">Project name</label>
+                    <br>
+                    <input type="text" name="project-3-name">
+                </div>
+                <div class="input-box">
+                    <label for="project-3-link">Link</label>
+                    <br>
+                    <input type="text" name="project-3-link">
+                </div>
+                <div class="input-box">
+                    <label for="project-4-name">Project name</label>
+                    <br>
+                    <input type="text" name="project-4-name">
+                </div>
+                <div class="input-box">
+                    <label for="project-4-link">Link</label>
+                    <br>
+                    <input type="text" name="project-4-link">
+                </div>
+                <div class="input-box">
+                    <label for="project-5-name">Project name</label>
+                    <br>
+                    <input type="text" name="project-5-name">
+                </div>
+                <div class="input-box">
+                    <label for="project-5-link">Link</label>
+                    <br>
+                    <input type="text" name="project-5-link">
+                </div>
+            </div>
+            <br>
+
+            <div class="submit-section">
+                <input type="submit" value="Generate README.md">
+            </div>
+            <br><br>
+
+        </form>
+    </section>
+
 </section>
+
+<br><br><br>
 {% endblock %}
