@@ -15,22 +15,23 @@
                 {{ s }}
             </code>
         </pre>
-        <button type="button" onclick="CopyToClipboard()">Copy</button>
+        <button type="button" onclick="copyButton()">Copy</button>
     </div>
-    <!-- <div class="modal">
-        <button type="button" onclick="expandModal()"><i class="fa fa-window-close" aria-hidden="true"></i></button>
-        <h2>How to add a README.md to your github profile</h2>
-        <ul>
-            <li>Create a repository in your github account and name it as <span class="mono">&ltusername&gt.</span></li>
-            <li>Create <span class="mono">README.md</span> inside that repository.</li>
-            <li>Paste the copied content into it and commit the changes.</li>
-        </ul>
-    </div> -->
     <br>
 </section>
+<div class="modal" id="modal">
+    <div class="button"><button type="button" onclick="closeModal()"><i class="fa fa-window-close" aria-hidden="true"></i></button></div>
+    <h1>Copied!</h1>
+    <h3>How to add a README.md to your github profile:</h3>
+    <ul>
+        <li>Create a repository in your github account and name it as your github username.</li>
+        <li>Create <span class="mono">README.md</span> inside that repository.</li>
+        <li>Paste the copied content into it and commit the changes.</li>
+    </ul>
+</div>
 <br><br><br>
 <script>
-    function CopyToClipboard()
+    function copyButton()
     {
         var r = document.createRange();
         r.selectNode(document.getElementById("toCopy"));
@@ -38,7 +39,11 @@
         window.getSelection().addRange(r);
         document.execCommand('copy');
         window.getSelection().removeAllRanges();
-        alert("Copied")
+        document.getElementById("modal").style.display = "block";
     }
+         function closeModal()
+          {
+            document.getElementById("modal").style.display = "none"
+          }
 </script>
 {% endblock %}
