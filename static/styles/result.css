@@ -54,11 +54,16 @@ section div button:hover {
     display: flex;
     justify-content: flex-end;
 }
+
 .modal .button button {
     border: none;
+    transition-duration: 0.1s;
+}
+.modal .button button:hover {
+    transform: scale(1.2);
 }
 
-.modal h3 {
+.modal h3, .modal h1 {
     font-family: "Noto sans", sans-serif;
 }
 
