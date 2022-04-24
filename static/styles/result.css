@@ -37,7 +37,32 @@ section div button:hover {
     cursor: pointer;
 }
 
-/* .modal {
-    border: 1px solid red;
+.modal {
     display: none;
-} */
+    width: 50%;
+    background-color: #f0f0f0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1%;
+    border: 1px solid black;
+}
+
+.modal .button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.modal .button button {
+    border: none;
+}
+
+.modal h3 {
+    font-family: "Noto sans", sans-serif;
+}
+
+.modal ul {
+    list-style-position: inside;
+    font-family: sans-serif;
+}

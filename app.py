@@ -1,4 +1,3 @@
-from django.db import reset_queries
 from flask import Flask, url_for, render_template, request, redirect
 import file_handling
 # import os
@@ -20,12 +19,15 @@ def main():
         photo = request.form.get("photo")
         # social media
         portofolio = request.form.get("portofolio")
+        mail  = request.form.get("google")
+        if len(mail) > 0:
+            mail = "mailto://" + mail
         socials = {
             "codepen": request.form.get("codepen"),
             "deviantart": request.form.get("deviantart"),
             "dribble": request.form.get("dribble"),
             "discord": request.form.get("discord"),
-            "google": request.form.get("google"),
+            "google": mail,
             "hackerrank": request.form.get("hackerrank"),
             "instagram": request.form.get("instagram"),
             "kaggle": request.form.get("kaggle"),
