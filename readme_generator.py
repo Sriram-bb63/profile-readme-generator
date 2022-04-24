@@ -11,7 +11,7 @@ def write(name, age, university, course, work, company, nick_name, country, phot
 # # Hello there\n\n<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\nI am {name},"""
 
     if len(photo) > 0:
-        s = s + "<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\n"
+        s = s + f"<div align='center'>\n\t<img src='{photo}' width=50%, title='cover photo', alt='cover photo'>\n</div>\n\n"
 
     s = s + f"I am {name},"
 
