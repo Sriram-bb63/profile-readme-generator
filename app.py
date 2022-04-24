@@ -108,7 +108,7 @@ def main():
             "project_5_name": request.form.get("project-5-name"),
             "project_5_link": request.form.get("project-5-link")
         }
-        s = file_handling.write(name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects)
+        s = readme_generator.write(name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects)
         return render_template("result.html", s=s)
     return render_template("index.html")
 
