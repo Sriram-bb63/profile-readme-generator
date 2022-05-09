@@ -147,3 +147,8 @@ label {
     background-color: rgb(187, 255, 0);
     cursor: pointer;
 }
+.credits {
+    font-family: "Noto sans", sans-serif;
+    padding-left: 2%;
+    padding-bottom: 1% ;
+}
