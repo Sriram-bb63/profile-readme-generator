@@ -60,9 +60,7 @@ def write(name, age, university, course, work, company, nick_name, country, phot
             if len(project_name) > 0 and len(project_link) > 0:
                 s = s + f"- {project_name}: <a href='{project_link}' target='_blank'>{project_link}</a>\n"
 
-    if len(set(list(credits.values()))) > 1:
+    if credits != None:
         s = s + "\n\n\n---\n > This README.md was generated using <a href='https://profile-readme-generator.herokuapp.com/' target='_blank'>https://profile-readme-generator.herokuapp.com/</a>"
-    with open("asdf.md", "w") as f:
-        f.write(s)
-
+    
     return s

@@ -108,16 +108,13 @@ def main():
             "project_5_name": request.form.get("project-5-name"),
             "project_5_link": request.form.get("project-5-link")
         }
-
-        credits = {
-            "credits": request.form.get("credits"),
-            "dummy"  : request.form.get("dummy")
-        }
         
-        s = readme_generator.write(name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects,credits)
+        credits = request.form.get("credits")
+        
+        s = readme_generator.write(name, age, university, course, work, company, nick_name, country, photo, portofolio, socials, skills, projects, credits)
         return render_template("result.html", s=s)
     return render_template("index.html")
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
