@@ -33,6 +33,10 @@
     }
 }
 
+body {
+    overflow-x: hidden;
+}
+
 header {
     border-bottom: 1px black solid;
     height: 10vh;

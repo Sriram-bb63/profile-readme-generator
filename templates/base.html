@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ba730afc2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
-    <!-- {% block style %} {% endblock %} -->
+    {% block style %} {% endblock %}
     <title>Readme generator</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
         <h1>This site does not support mobile view yet</h1>
     </div>
     
-    <!-- {% block content %} {% endblock %} -->
+    {% block content %} {% endblock %}
 
     <footer>
         <p>Developed by <a href="https://sriram-bb63.github.io/">Sriram Vasudevan</a></p>
