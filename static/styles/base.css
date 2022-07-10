@@ -10,11 +10,26 @@
     display: none;
 }
 @media screen and (max-width: 780px) {
-    body section, body footer {
+    body section {
         display: none;
+    }
+    header h1 {
+        font-size: 16px;
     }
     .mobile {
         display: block;
+        height: 75vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1%;
+    }
+    .mobile h1 {
+        font-family: sans-serif;
+        font-size: 18px;
+        text-align: center;
     }
 }
 
@@ -29,27 +44,29 @@ header h1 {
     font-family: "Noto sans", sans-serif;
     padding-left: 1%;
 }
-@media screen and (max-width: 780px) {
-    header h1 {
-        font-size: 6vw;
-    }
-}
 
 footer {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
     border-top: 1px solid black;
 }
 
-footer a, footer i {
-    margin-left: 0.5%;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+footer p {
+    font-family: monospace;
+}
+footer p a {
+    color: blue;
 }
 
-footer a {
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer div a {
     color: blue;
-    text-decoration: underline;
+    margin-right: 5px;
     font-family: monospace;
 }
